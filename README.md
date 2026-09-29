@@ -16,7 +16,7 @@ Each hero has a "game de jour" switcher (Poker / Letters / CryptoGram). The sele
 
 - **`/contact`** is the organizer early-access request for Azat Poker. Requests are emailed to **contact@azat.games** via [FormSubmit](https://formsubmit.co). The first submission sends a one-time activation email to that inbox, and nothing is delivered until you click its "Activate Form" link. Every "Organizer early access" button links here. `vercel.json` rewrites routes to the SPA.
 - **Sign in** links to `https://login.azat.games/login`. The page reads the shared `sb-azat-auth-token` cookie (Domain `.azat.games`) to detect an existing session. When one exists, the button becomes an account chip that opens the hub. See `src/lib/session.ts`.
-  - The hub only accepts `redirect_to` for `*.azat.games` **subdomains**, so sign-in from the apex `azat.games` lands on the hub instead of returning here.
+  - After sign-in the hub returns here via `redirect_to`. It accepts `https://azat.games` and `https://*.azat.games`, so localhost and preview URLs land on the hub instead.
 
 ## Develop
 

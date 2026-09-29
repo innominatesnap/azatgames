@@ -77,15 +77,17 @@ export function readAzatUser(cookieHeader: string = document.cookie): AzatUser |
 }
 
 /**
- * Hub login URL. The hub only honors redirect_to for https://*.azat.games subdomains
- * (not the apex), so other origins get a plain /login and land on the hub afterwards.
+ * Hub login URL. The hub honors redirect_to for https://azat.games and https://*.azat.games
+ * (login.azat.games src/lib/redirectAllowlist.ts); other origins (localhost, previews) get
+ * a plain /login and land on the hub afterwards.
  */
 export function hubLoginUrl(returnTo: string = window.location.href): string {
   const url = new URL('/login', AZAT_AUTH_HUB);
   try {
     const back = new URL(returnTo);
     const host = back.hostname.toLowerCase().replace(/\.$/, '');
-    if (back.protocol === 'https:' && host.endsWith('.azat.games') && !host.includes('..')) {
+    const allowed = host === 'azat.games' || (host.endsWith('.azat.games') && !host.includes('..'));
+    if (back.protocol === 'https:' && !back.username && !back.password && allowed) {
       url.searchParams.set('redirect_to', back.toString());
     }
   } catch {
