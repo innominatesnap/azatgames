@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#03050d;color:#e8ecff;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#22d3ee;text-decoration:none}a:hover{color:#e8ecff}
+</style>
+</helmet>
+
+<section style="display:flex;flex-direction:column;gap:32px;padding:80px">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:1100px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#22d3ee">TURN 1 · AZAT.GAMES HOME — THREE DIRECTIONS</div>
+    <div style="font-size:18px;color:#8791b3;text-wrap:pretty">Same content, one Azat palette. The featured game (“game de jour”) swaps imagery and copy in every hero — use the in-page switcher or the <b style="color:#e8ecff">featured</b> tweak. <a href="#1a">1a</a> Broadcast · <a href="#1b">1b</a> Marquee · <a href="#1c">1c</a> Control room.</div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:80px;align-items:flex-start">
+
+  <!-- ============ 1a BROADCAST ============ -->
+  <div id="1a" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;align-items:center;gap:12px"><span style="background:#f5b043;color:#060916;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;padding:4px 10px;border-radius:6px">1a</span><span style="font-size:15px;color:#8791b3">Broadcast — full-bleed premiere with TV-display framing</span></div>
+    <div data-screen-label="1a Broadcast" style="width:1280px;background:#060916;border:1px solid rgba(148,163,255,0.12);border-radius:14px;overflow:hidden">
+
+      <div style="position:relative;min-height:760px;overflow:hidden;display:flex;flex-direction:column">
+        <img src="{{ f.hero }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ f.heroPos }};opacity:0.55">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,#060916 0%,rgba(6,9,22,0.92) 38%,rgba(6,9,22,0.35) 75%,rgba(6,9,22,0.6) 100%)"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,9,22,0.7) 0%,transparent 22%,transparent 62%,#060916 100%)"></div>
+        <div style="position:absolute;left:20px;top:20px;width:28px;height:28px;border-left:2px solid #f5b043;border-top:2px solid #f5b043"></div>
+        <div style="position:absolute;right:20px;top:20px;width:28px;height:28px;border-right:2px solid #f5b043;border-top:2px solid #f5b043"></div>
+        <div style="position:absolute;left:20px;bottom:20px;width:28px;height:28px;border-left:2px solid #f5b043;border-bottom:2px solid #f5b043"></div>
+        <div style="position:absolute;right:20px;bottom:20px;width:28px;height:28px;border-right:2px solid #f5b043;border-bottom:2px solid #f5b043"></div>
+
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:36px 64px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#060916"></rect><rect x="4.5" y="4.5" width="10" height="10" rx="2" fill="#131a36" stroke="#5c6690" stroke-width="1.2"></rect><rect x="17.5" y="4.5" width="10" height="10" rx="2" fill="#4f7cff"></rect><rect x="4.5" y="17.5" width="10" height="10" rx="2" fill="#131a36" stroke="#5c6690" stroke-width="1.2"></rect><rect x="17.5" y="17.5" width="10" height="10" rx="2" fill="#131a36" stroke="#22d3ee" stroke-width="1.2"></rect></svg>
+            <span style="font-weight:700;letter-spacing:0.16em;font-size:15px">AZAT <span style="color:#22d3ee">GAMES</span></span>
+          </div>
+          <div style="display:flex;gap:32px;font-size:15px;color:#8791b3"><span>Games</span><span>Roadmap</span><span>Organizers</span><span>Azat Tech</span></div>
+          <div style="display:flex;gap:10px"><span style="padding:9px 16px;border:1px solid rgba(148,163,255,0.22);border-radius:8px;font-size:14px;font-weight:600;white-space:nowrap">Sign in</span></div>
+        </div>
+
+        <div style="position:relative;display:flex;flex-direction:column;gap:22px;padding:48px 64px 0;max-width:760px;flex:1">
+          <div style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em">
+            <span style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(34,211,238,0.45);border-radius:999px;color:#22d3ee;background:rgba(34,211,238,0.08)"><span style="width:7px;height:7px;border-radius:50%;background:#22d3ee"></span>NOW PREMIERING</span>
+            <span style="color:#f5b043">{{ f.nameUpper }}</span>
+          </div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:112px;line-height:0.88;letter-spacing:0.01em;text-transform:uppercase;text-shadow:0 0 30px rgba(232,236,255,0.25)">{{ f.tagline }}</div>
+          <div style="font-size:21px;line-height:1.5;color:#c3c9e6;max-width:600px;text-wrap:pretty">{{ f.lede }}</div>
+          <div style="display:flex;gap:12px;padding-top:8px">
+            <a href="{{ f.url }}" style="display:flex;align-items:center;gap:10px;padding:16px 26px;border-radius:10px;background:linear-gradient(90deg,#3b82f6,#06b6d4);color:#060916;font-weight:700;font-size:17px;box-shadow:0 10px 40px rgba(34,211,238,0.25)">{{ f.cta }} <span>→</span></a>
+            <span style="display:flex;align-items:center;padding:16px 22px;border-radius:10px;border:1px solid rgba(148,163,255,0.22);font-weight:600;font-size:16px;background:rgba(11,16,36,0.6)">{{ f.host }}</span>
+          </div>
+        </div>
+
+        <div style="position:relative;margin:48px 64px 44px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+          <sc-for list="{{ tabs }}" as="g" hint-placeholder-count="3">
+            <div onClick="{{ g.pick }}" style="cursor:pointer;display:flex;align-items:center;gap:14px;padding:12px;border-radius:12px;border:1px solid {{ g.border }};background:{{ g.bg }}">
+              <img src="{{ g.hero }}" alt="" style="width:84px;height:52px;object-fit:cover;object-position:top;border-radius:6px;border:1px solid rgba(148,163,255,0.12)">
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:{{ g.labelColor }}">{{ g.num }} · {{ g.onAir }}</span>
+                <span style="font-weight:600;font-size:16px">{{ g.name }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;padding:96px 64px 40px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#22d3ee">PORTFOLIO · SHIPPING NOW</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:64px;line-height:1;text-transform:uppercase">Three games live. Built on one platform.</div>
+      </div>
+      <sc-for list="{{ games }}" as="g" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding:48px 64px;border-top:1px solid rgba(148,163,255,0.12)">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em"><span style="color:#f5b043">{{ g.num }}</span><span style="color:#8791b3">{{ g.kindUpper }}</span></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:56px;line-height:0.95;text-transform:uppercase">{{ g.name }}</div>
+            <div style="font-size:17px;line-height:1.55;color:#aab2d4;text-wrap:pretty">{{ g.lede }}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;padding:8px 0">
+              <sc-for list="{{ g.features }}" as="ft" hint-placeholder-count="4">
+                <div style="display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid rgba(148,163,255,0.22)">
+                  <span style="font-weight:600;font-size:15px">{{ ft.t }}</span>
+                  <span style="font-size:14px;line-height:1.45;color:#8791b3">{{ ft.d }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:18px">
+              <a href="{{ g.url }}" style="padding:12px 20px;border-radius:9px;border:1px solid rgba(34,211,238,0.5);color:#22d3ee;font-weight:600;font-size:15px">{{ g.cta }} →</a>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8791b3">{{ g.host }}</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr;grid-template-rows:220px 220px;gap:12px">
+            <img src="{{ g.s0 }}" alt="" style="grid-row:span 2;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(148,163,255,0.22)">
+            <img src="{{ g.s1 }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(148,163,255,0.12)">
+            <img src="{{ g.s2 }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(148,163,255,0.12)">
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="display:flex;flex-direction:column;gap:40px;padding:96px 64px;background:#0b1024;border-top:1px solid rgba(148,163,255,0.12)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#22d3ee">GAME LIBRARY · ROADMAP</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:64px;line-height:1;text-transform:uppercase">What ships next</div>
+          </div>
+          <div style="font-size:16px;color:#8791b3;max-width:380px;text-wrap:pretty">Original online games, faithful digital versions of classics, and results keeping for games played in person.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid rgba(148,163,255,0.22)">
+          <sc-for list="{{ roadmap }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:10px;padding:22px 22px 0 0;position:relative">
+              <span style="position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:#f5b043;box-shadow:0 0 16px rgba(245,176,67,0.6)"></span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#f5b043;letter-spacing:0.1em">{{ r.when }}</span>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:34px;text-transform:uppercase;line-height:1">{{ r.name }}</span>
+              <span style="font-size:14px;line-height:1.5;color:#8791b3">{{ r.detail }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ showSoon }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:16px;padding-top:24px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#8791b3">RESULTS KEEPING FOR IN-PERSON PLAY · COMING SOON</div>
+            <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px">
+              <sc-for list="{{ soon }}" as="s" hint-placeholder-count="10">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border:1px dashed rgba(148,163,255,0.22);border-radius:10px;background:#060916">
+                  <span style="font-weight:600;font-size:15px">{{ s }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#8791b3">SOON</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;padding:96px 64px;align-items:center;background:radial-gradient(900px 500px at 90% 0%,rgba(79,124,255,0.14),transparent 60%)">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#f5b043">FOR TOURNAMENT ORGANIZERS</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:56px;line-height:0.98;text-transform:uppercase">One source of record for every event you run.</div>
+          <div style="font-size:17px;line-height:1.55;color:#aab2d4;text-wrap:pretty">Players, rule sets, judges, venues, teams, leagues and organizations in one system — from a high-school chess bracket to a national free-to-play poker circuit.</div>
+          <div style="font-size:15px;line-height:1.5;color:#8791b3;font-style:italic;text-wrap:pretty">Screens are where people find a game. Tables, courts and league nights are where they keep showing up.</div>
+          <div style="display:flex;gap:12px;padding-top:6px"><span style="padding:14px 22px;border-radius:10px;background:linear-gradient(90deg,#3b82f6,#06b6d4);color:#060916;font-weight:700">Organizer early access</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+          <sc-for list="{{ entities }}" as="e" hint-placeholder-count="8">
+            <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid rgba(148,163,255,0.12);border-radius:10px;background:#0b1024">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#22d3ee">{{ e.n }}</span>
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;font-size:15px">{{ e.t }}</span><span style="font-size:13px;color:#8791b3">{{ e.d }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid rgba(148,163,255,0.12);font-size:14px;color:#8791b3">
+        <span style="font-weight:700;letter-spacing:0.16em;color:#e8ecff">AZAT GAMES</span>
+        <div style="display:flex;gap:24px"><span>poker.azat.games</span><span>letters.azat.games</span><span>cryptogram.azat.games</span></div>
+        <span>An Azat Tech platform</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 1b MARQUEE ============ -->
+  <div id="1b" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;align-items:center;gap:12px"><span style="background:#f5b043;color:#060916;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;padding:4px 10px;border-radius:6px">1b</span><span style="font-size:15px;color:#8791b3">Marquee — split hero, stacked screens, channel tabs</span></div>
+    <div data-screen-label="1b Marquee" style="width:1280px;background:#060916;background-image:radial-gradient(1200px 800px at 15% -10%,rgba(79,124,255,0.15),transparent 55%),radial-gradient(900px 700px at 90% 10%,rgba(34,211,238,0.10),transparent 60%);border:1px solid rgba(148,163,255,0.12);border-radius:14px;overflow:hidden">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 56px;border-bottom:1px solid rgba(148,163,255,0.12)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#060916"></rect><rect x="4.5" y="4.5" width="10" height="10" rx="2" fill="#131a36" stroke="#5c6690" stroke-width="1.2"></rect><rect x="17.5" y="4.5" width="10" height="10" rx="2" fill="#4f7cff"></rect><rect x="4.5" y="17.5" width="10" height="10" rx="2" fill="#131a36" stroke="#5c6690" stroke-width="1.2"></rect><rect x="17.5" y="17.5" width="10" height="10" rx="2" fill="#131a36" stroke="#22d3ee" stroke-width="1.2"></rect></svg>
+          <span style="font-weight:700;letter-spacing:0.16em;font-size:15px">AZAT <span style="color:#22d3ee">GAMES</span></span>
+        </div>
+        <div style="display:flex;gap:6px;padding:5px;border:1px solid rgba(148,163,255,0.12);border-radius:12px;background:#0b1024">
+          <sc-for list="{{ tabs }}" as="g" hint-placeholder-count="3">
+            <span onClick="{{ g.pick }}" style="cursor:pointer;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:600;background:{{ g.pillBg }};color:{{ g.pillColor }}">{{ g.short }}</span>
+          </sc-for>
+        </div>
+        <span style="padding:9px 16px;border:1px solid rgba(148,163,255,0.22);border-radius:8px;font-size:14px;font-weight:600;white-space:nowrap">Sign in</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;padding:88px 56px 96px;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#22d3ee">GAME DE JOUR — {{ f.kindUpper }}</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;letter-spacing:0.04em;color:#f5b043;text-transform:uppercase">{{ f.name }}</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:108px;line-height:0.88;text-transform:uppercase">{{ f.tagline }}</div>
+          </div>
+          <div style="font-size:19px;line-height:1.55;color:#aab2d4;text-wrap:pretty;max-width:520px">{{ f.lede }}</div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <a href="{{ f.url }}" style="padding:15px 24px;border-radius:10px;background:linear-gradient(90deg,#3b82f6,#06b6d4);color:#060916;font-weight:700;font-size:16px">{{ f.cta }} →</a>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8791b3">{{ f.host }}</span>
+          </div>
+        </div>
+        <div style="position:relative;height:520px">
+          <img src="{{ f.s2 }}" alt="" style="position:absolute;right:0;top:0;width:58%;height:340px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid rgba(148,163,255,0.22);opacity:0.7">
+          <img src="{{ f.s1 }}" alt="" style="position:absolute;left:0;bottom:0;width:48%;height:300px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid rgba(148,163,255,0.22);box-shadow:0 30px 60px rgba(0,0,0,0.5)">
+          <img src="{{ f.s0 }}" alt="" style="position:absolute;left:14%;top:70px;width:76%;height:360px;object-fit:cover;object-position:{{ f.heroPos }};border-radius:14px;border:1px solid rgba(34,211,238,0.4);box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(34,211,238,0.12)">
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px;padding:80px 56px;border-top:1px solid rgba(148,163,255,0.12)">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:52px;text-transform:uppercase;line-height:1">The portfolio</div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px">
+          <sc-for list="{{ games }}" as="g" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;border:1px solid rgba(148,163,255,0.12);border-radius:14px;background:#0b1024;overflow:hidden">
+              <img src="{{ g.s0 }}" alt="" style="width:100%;height:220px;object-fit:cover;object-position:{{ g.heroPos }};border-bottom:1px solid rgba(148,163,255,0.12)">
+              <div style="display:flex;flex-direction:column;gap:14px;padding:24px">
+                <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em"><span style="color:#f5b043">{{ g.num }}</span><span style="color:#22d3ee">LIVE</span></div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:38px;text-transform:uppercase;line-height:1">{{ g.name }}</div>
+                <div style="font-size:15px;line-height:1.5;color:#aab2d4">{{ g.short1 }}</div>
+                <div style="display:flex;flex-direction:column;gap:8px;padding-top:4px">
+                  <sc-for list="{{ g.features }}" as="ft" hint-placeholder-count="4">
+                    <div style="display:flex;gap:10px;font-size:14px;color:#c3c9e6"><span style="color:#22d3ee">—</span>{{ ft.t }}</div>
+                  </sc-for>
+                </div>
+                <a href="{{ g.url }}" style="font-weight:600;font-size:15px;padding-top:6px">{{ g.cta }} →</a>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;padding:80px 56px;border-top:1px solid rgba(148,163,255,0.12)">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:52px;text-transform:uppercase;line-height:1">Coming to the library</div>
+          <div style="font-size:16px;line-height:1.55;color:#8791b3">New titles on a published schedule, plus results keeping for games played in person.</div>
+          <sc-if value="{{ showSoon }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:12px">
+              <sc-for list="{{ soon }}" as="s" hint-placeholder-count="10">
+                <span style="padding:8px 14px;border-radius:999px;border:1px dashed rgba(148,163,255,0.3);font-size:14px;color:#c3c9e6">{{ s }}</span>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ roadmap }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid rgba(148,163,255,0.12);align-items:baseline">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:15px;color:#f5b043">{{ r.when }}</span>
+              <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;text-transform:uppercase">{{ r.name }}</span><span style="font-size:14px;color:#8791b3">{{ r.detail }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="margin:0 56px 64px;padding:56px;border-radius:16px;border:1px solid rgba(148,163,255,0.22);background:linear-gradient(135deg,#131a36,#0b1024);display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;justify-content:space-between;gap:40px;align-items:flex-end">
+          <div style="display:flex;flex-direction:column;gap:12px;max-width:620px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#f5b043">ORGANIZER PLATFORM</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:1;text-transform:uppercase">Run a season, not a spreadsheet.</div>
+            <div style="font-size:14px;color:#8791b3;font-style:italic">When people log off, they look for a table. We keep score there too.</div>
+          </div>
+          <span style="padding:14px 22px;border-radius:10px;background:linear-gradient(90deg,#3b82f6,#06b6d4);color:#060916;font-weight:700;white-space:nowrap">Organizer early access</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+          <sc-for list="{{ entities }}" as="e" hint-placeholder-count="8">
+            <div style="display:flex;align-items:center;gap:10px"><span style="padding:10px 16px;border-radius:8px;border:1px solid rgba(34,211,238,0.3);background:rgba(34,211,238,0.06);font-weight:600;font-size:15px">{{ e.t }}</span><span style="color:#5c6690">{{ e.sep }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 1c CONTROL ROOM ============ -->
+  <div id="1c" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;align-items:center;gap:12px"><span style="background:#f5b043;color:#060916;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;padding:4px 10px;border-radius:6px">1c</span><span style="font-size:15px;color:#8791b3">Control room — programme guide + monitor, operations-grade</span></div>
+    <div data-screen-label="1c Control room" style="width:1280px;background:#060916;border:1px solid rgba(148,163,255,0.12);border-radius:14px;overflow:hidden;font-family:'Space Grotesk',sans-serif">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid rgba(148,163,255,0.12);font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#060916"></rect><rect x="4.5" y="4.5" width="10" height="10" rx="2" fill="#131a36" stroke="#5c6690" stroke-width="1.2"></rect><rect x="17.5" y="4.5" width="10" height="10" rx="2" fill="#4f7cff"></rect><rect x="4.5" y="17.5" width="10" height="10" rx="2" fill="#131a36" stroke="#5c6690" stroke-width="1.2"></rect><rect x="17.5" y="17.5" width="10" height="10" rx="2" fill="#131a36" stroke="#22d3ee" stroke-width="1.2"></rect></svg>
+          <span style="color:#f5b043;font-weight:700">AZAT</span><span style="color:#22d3ee">GAMES</span><span style="color:#8791b3">· COMPETITIVE GAMING PLATFORM</span>
+        </div>
+        <div style="display:flex;gap:28px;color:#8791b3"><span>GAMES</span><span>ROADMAP</span><span>ORGANIZERS</span><span style="color:#e8ecff">SIGN IN</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:320px minmax(0,1fr);min-height:680px;background-image:linear-gradient(to right,rgba(148,163,255,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(148,163,255,0.06) 1px,transparent 1px);background-size:44px 44px">
+        <div style="display:flex;flex-direction:column;border-right:1px solid rgba(148,163,255,0.12);background:rgba(11,16,36,0.85)">
+          <div style="padding:24px 28px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;color:#8791b3">PROGRAMME</div>
+          <sc-for list="{{ tabs }}" as="g" hint-placeholder-count="3">
+            <div onClick="{{ g.pick }}" style="cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:20px 28px;border-left:3px solid {{ g.rail }};background:{{ g.bg }};border-bottom:1px solid rgba(148,163,255,0.08)">
+              <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em"><span style="color:#8791b3">CH {{ g.num }}</span><span style="color:{{ g.labelColor }}">{{ g.onAir }}</span></div>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:28px;text-transform:uppercase;line-height:1">{{ g.name }}</span>
+              <span style="font-size:13px;color:#8791b3">{{ g.kind }}</span>
+            </div>
+          </sc-for>
+          <div style="padding:20px 28px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;color:#8791b3">UP NEXT</div>
+          <sc-for list="{{ roadmap }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:10px 28px;font-size:14px"><span style="color:#c3c9e6">{{ r.name }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#f5b043">{{ r.when }}</span></div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:28px;padding:40px 48px">
+          <div style="position:relative;border-radius:14px;border:1px solid rgba(79,124,255,0.45);background:#0b1024;padding:14px;box-shadow:0 0 80px rgba(79,124,255,0.12)">
+            <img src="{{ f.hero }}" alt="" style="display:block;width:100%;height:380px;object-fit:cover;object-position:{{ f.heroPos }};border-radius:8px">
+            <div style="position:absolute;left:28px;top:28px;display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(6,9,22,0.85);border:1px solid rgba(34,211,238,0.5);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#22d3ee"><span style="width:7px;height:7px;border-radius:50%;background:#22d3ee"></span>ON AIR</div>
+            <div style="position:absolute;right:28px;top:28px;padding:6px 12px;border-radius:6px;background:rgba(6,9,22,0.85);font-family:'JetBrains Mono',monospace;font-size:12px;color:#8791b3">{{ f.host }}</div>
+            <div style="position:absolute;left:6px;top:6px;width:22px;height:22px;border-left:2px solid #f5b043;border-top:2px solid #f5b043"></div>
+            <div style="position:absolute;right:6px;bottom:6px;width:22px;height:22px;border-right:2px solid #f5b043;border-bottom:2px solid #f5b043"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end">
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#f5b043">FEATURED · {{ f.nameUpper }}</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:76px;line-height:0.9;text-transform:uppercase">{{ f.tagline }}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="font-size:16px;line-height:1.55;color:#aab2d4;text-wrap:pretty">{{ f.lede }}</div>
+              <a href="{{ f.url }}" style="align-self:flex-start;padding:14px 22px;border-radius:10px;background:linear-gradient(90deg,#3b82f6,#06b6d4);color:#060916;font-weight:700;font-size:16px">{{ f.cta }} →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;padding:72px 40px;gap:24px;border-top:1px solid rgba(148,163,255,0.12)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#22d3ee">PORTFOLIO · SPEC SHEETS</div>
+        <sc-for list="{{ games }}" as="g" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:260px minmax(0,1fr) 300px;gap:32px;padding:28px 0;border-top:1px solid rgba(148,163,255,0.22)">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#f5b043">CH {{ g.num }} · LIVE</span>
+              <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:40px;line-height:0.95;text-transform:uppercase">{{ g.name }}</span>
+              <a href="{{ g.url }}" style="font-family:'JetBrains Mono',monospace;font-size:13px">{{ g.host }} ↗</a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px">
+              <sc-for list="{{ g.features }}" as="ft" hint-placeholder-count="4">
+                <div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid rgba(148,163,255,0.08);font-size:14px"><span style="color:#e8ecff;font-weight:600">{{ ft.t }}</span><span style="color:#8791b3;line-height:1.45">{{ ft.d }}</span></div>
+              </sc-for>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <img src="{{ g.s1 }}" alt="" style="width:100%;height:150px;object-fit:cover;object-position:top;border-radius:8px;border:1px solid rgba(148,163,255,0.12)">
+              <img src="{{ g.s2 }}" alt="" style="width:100%;height:150px;object-fit:cover;object-position:top;border-radius:8px;border:1px solid rgba(148,163,255,0.12)">
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ showSoon }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:18px;padding:0 40px 72px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#8791b3">IN-PERSON RESULTS KEEPING · STANDBY</div>
+          <div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));border:1px solid rgba(148,163,255,0.12);border-radius:10px;overflow:hidden">
+            <sc-for list="{{ soon }}" as="s" hint-placeholder-count="9">
+              <div style="display:flex;flex-direction:column;gap:6px;padding:18px 14px;border-right:1px solid rgba(148,163,255,0.12);background:#0b1024"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8791b3;letter-spacing:0.14em">SOON</span><span style="font-weight:600;font-size:14px">{{ s }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;padding:64px 40px;background:#0b1024;border-top:1px solid rgba(148,163,255,0.12);align-items:center">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#f5b043">TOURNAMENT OPERATIONS</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:1;text-transform:uppercase">Every source, one console.</div>
+          <div style="font-size:14px;color:#8791b3;font-style:italic">Online brings people together. In-person play keeps them together.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(148,163,255,0.12);border:1px solid rgba(148,163,255,0.12);border-radius:10px;overflow:hidden">
+          <sc-for list="{{ entities }}" as="e" hint-placeholder-count="8">
+            <div style="display:flex;flex-direction:column;gap:4px;padding:16px;background:#060916"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22d3ee">{{ e.n }}</span><span style="font-weight:600;font-size:15px">{{ e.t }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;featured&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;poker&quot;,&quot;letters&quot;,&quot;cryptogram&quot;],&quot;default&quot;:&quot;poker&quot;,&quot;tsType&quot;:&quot;'poker'|'letters'|'cryptogram'&quot;},&quot;showComingSoon&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { feat: null };
+  games() {
+    return [
+      { key: 'poker', num: '01', name: 'Azat Poker', short: 'Poker', kind: 'Tournament operations', url: 'https://poker.azat.games', host: 'poker.azat.games',
+        tagline: 'Run the room.', cta: 'Launch Azat Poker', heroPos: 'center',
+        lede: 'Registration, seating, blind clocks, TV displays and final results in one console for the tournament director, from a home game to a regional circuit.',
+        short1: 'The tournament director’s console: clock, seating, TV displays and results.',
+        shots: ['assets/poker-tv-running.png', 'assets/poker-tv-seating.png', 'assets/poker-tv-champion.png'],
+        features: [
+          { t: 'Blind clock', d: 'Levels, breaks and pause state, readable from across the room.' },
+          { t: 'TV displays', d: 'Check-in, seating, running clock and champion screens.' },
+          { t: 'Seating & balancing', d: 'Table draws and moves pushed straight to the floor.' },
+          { t: 'Results upload', d: 'Final standings posted to league tables in one step.' } ] },
+      { key: 'letters', num: '02', name: 'Azat Letters', short: 'Letters', kind: 'Daily word game', url: 'https://letters.azat.games', host: 'letters.azat.games',
+        tagline: 'One word. The whole house.', cta: 'Play Azat Letters', heroPos: 'center 30%',
+        lede: 'An invite-only daily letters game for households. Easy and Hard modes each keep their own keyword and streak, with monthly tracking and head-to-head stats.',
+        short1: 'Invite-only household daily letters game with streaks and monthly standings.',
+        shots: ['assets/letters-board.png', 'assets/letters-stats.png', 'assets/letters-monthly.png'],
+        features: [
+          { t: 'Easy & Hard modes', d: 'Separate keywords and streaks; Hard keeps hits in their column.' },
+          { t: 'Household invites', d: 'Private groups — family, office, neighbors.' },
+          { t: 'Monthly tracking', d: 'Standings reset each month for a fresh race.' },
+          { t: 'Stats', d: 'Guess distribution and head-to-head results.' } ] },
+      { key: 'cryptogram', num: '03', name: 'CryptoGram Messenger', short: 'CryptoGram', kind: 'Puzzle messenger', url: 'https://cryptogram.azat.games', host: 'cryptogram.azat.games',
+        tagline: 'Crack the code. Send one back.', cta: 'Play CryptoGram', heroPos: 'center 20%',
+        lede: 'Decode number-coded quotes against the clock, then turn your own message into a cryptogram and send it to a friend to solve.',
+        short1: 'Decode daily number-coded quotes, then send cryptograms to friends.',
+        shots: ['assets/cryptogram-home.png', 'assets/cryptogram-daily.png', 'assets/cryptogram-timed.png'],
+        features: [
+          { t: 'Daily quote', d: 'A new public-domain line every day.' },
+          { t: 'Timed solves', d: 'Par times and a clock for competitive play.' },
+          { t: 'Send to friends', d: 'Compose a message; it arrives as a puzzle.' },
+          { t: 'Hints & stars', d: 'Hints cost stars; a clean solve inside par earns 3.' } ] }
+    ].map(g => ({ ...g, hero: g.shots[0], s0: g.shots[0], s1: g.shots[1], s2: g.shots[2], nameUpper: g.name.toUpperCase(), kindUpper: g.kind.toUpperCase() }));
+  }
+  renderVals() {
+    const games = this.games();
+    const featKey = this.state.feat ?? this.props.featured ?? 'poker';
+    const f = games.find(g => g.key === featKey) || games[0];
+    const tabs = games.map(g => {
+      const on = g.key === f.key;
+      return { ...g, pick: () => this.setState({ feat: g.key }),
+        onAir: on ? 'ON AIR' : 'VIEW', border: on ? 'rgba(245,176,67,0.7)' : 'rgba(148,163,255,0.14)',
+        bg: on ? 'rgba(19,26,54,0.92)' : 'rgba(6,9,22,0.6)', labelColor: on ? '#f5b043' : '#8791b3',
+        pillBg: on ? '#131a36' : 'transparent', pillColor: on ? '#e8ecff' : '#8791b3', rail: on ? '#f5b043' : 'transparent' };
+    });
+    const roadmap = [
+      { when: 'Q4 2026', name: 'Chess', detail: 'Online play plus over-the-board results for school and club events.' },
+      { when: 'Q4 2026', name: 'Card games', detail: 'Cribbage, Hearts, Spades, Euchre, Canasta, Golf.' },
+      { when: 'Q2 2027', name: 'Treasure Hunt', detail: 'Original location-based hunts for teams and neighborhoods.' },
+      { when: 'Q4 2027', name: 'TCGs', detail: 'Trading card game events, pairings and standings.' }
+    ];
+    const soon = ['Board games', 'Pool', 'Volleyball', 'Basketball', 'Football', 'Cornhole', 'Darts', 'Soccer', 'eSports'];
+    const ents = [['Organizations', 'Associations, circuits, clubs'], ['Leagues', 'Seasons and standings'], ['Teams', 'Rosters and captains'], ['Players', 'One profile across games'], ['Venues', 'Rooms, courts, bars'], ['Judges', 'Officials and TDs'], ['Rule sets', 'Versioned per event'], ['Results', 'Collected from every source']];
+    const entities = ents.map(([t, d], i) => ({ t, d, n: String(i + 1).padStart(2, '0'), sep: i < ents.length - 1 ? '/' : '' }));
+    return { f, games, tabs, roadmap, soon, entities, showSoon: this.props.showComingSoon ?? true };
+  }
+  componentDidUpdate(prev) {
+    if (prev.featured !== this.props.featured) this.setState({ feat: null });
+  }
+}
+</script>
+</body>
+</html>
