@@ -38,6 +38,17 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Checkout vault (read-only design specs and packets)
+        uses: actions/checkout@v6
+        with:
+          repository: innominatesnap/azattech-grokbots
+          token: ${{ secrets.VAULT_READ_TOKEN }}
+          path: .vault
+          persist-credentials: false
+
+      - name: Keep vault out of commits
+        run: echo ".vault/" >> .git/info/exclude
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
