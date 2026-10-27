@@ -66,4 +66,34 @@ jobs:
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://code.claude.com/docs/en/cli-reference for available options
           # claude_args: '--allowed-tools Bash(gh pr *)'
+          claude_args: |
+            --allowedTools "Bash(gh pr create:*),Bash(gh pr list:*),Bash(gh pr view:*)"
+            --append-system-prompt "After your final push to a new branch, open the pull request yourself: run gh pr list --head <branch> --state open, and if none is open run gh pr create --base <default branch> --head <branch> --title <latest commit subject> --body <short summary plus Refs #issue>. GH_TOKEN in your shell is already the Claude App token, so CI runs on that PR. Put the PR URL in your status block; do not stop at only a Create PR link. A workflow step after this one flags any pushed branch still left without a PR."
 
+      # Safety net (azattech-grokbots#181): the action revokes the Claude App token before this
+      # step runs, and a PR opened with GITHUB_TOKEN would not start CI, so this step never opens
+      # the PR. If Claude pushed a branch and no PR is open for it, it posts one flag comment.
+      - name: Flag a pushed branch that has no PR
+        if: always() && steps.claude.outputs.branch_name != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.claude.outputs.branch_name }}
+          REPO: ${{ github.repository }}
+          NUM: ${{ github.event.issue.number || github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set +e
+          BASE=$(gh api "repos/$REPO" -q .default_branch)
+          AHEAD=$(gh api "repos/$REPO/compare/$BASE...$BRANCH" -q .ahead_by 2>/dev/null)
+          if [ -z "$AHEAD" ] || [ "$AHEAD" = "0" ]; then echo "No commits on $BRANCH ahead of $BASE"; exit 0; fi
+          OPEN=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json url -q '.[0].url')
+          if [ -n "$OPEN" ]; then echo "PR already open: $OPEN"; exit 0; fi
+          if [ -z "$NUM" ]; then echo "No Issue or PR to comment on"; exit 0; fi
+          MARK="<!-- claude-no-pr:$BRANCH -->"
+          if gh api "repos/$REPO/issues/$NUM/comments" --paginate -q '.[].body' | grep -qF "$MARK"; then echo "Already flagged"; exit 0; fi
+          TITLE=$(gh api "repos/$REPO/commits/$BRANCH" -q '.commit.message' | head -n1)
+          Q=$(jq -rn --arg t "$TITLE" --arg b "Opened from Claude's run $RUN_URL. Refs #$NUM" '"title=\($t|@uri)&body=\($b|@uri)"')
+          printf '%s\n%s\n' "$MARK" "**No PR yet:** Claude pushed \`$BRANCH\` ($AHEAD commit(s) ahead of \`$BASE\`) but no pull request is open. [Create PR]($GITHUB_SERVER_URL/$REPO/compare/$BASE...$BRANCH?quick_pull=1&$Q) · [run]($RUN_URL)" > /tmp/no-pr.md
+          gh issue comment "$NUM" -R "$REPO" --body-file /tmp/no-pr.md || true
+          exit 0
